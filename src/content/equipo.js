@@ -6,7 +6,7 @@ export const EQUIPO = {
   certText: 'acordar objetivos y roles, cumplir compromisos, manejar desacuerdos y colaborar a distancia',
   passScore: 70,
   video: {
-    intro: 'Hola, soy Sky. En este módulo vas a entrenar el trabajo en equipo: colaborar, ponerse de acuerdo y cumplir con otros.',
+    intro: 'Hola, soy Kiki. En este módulo vas a entrenar el trabajo en equipo: colaborar, ponerse de acuerdo y cumplir con otros.',
     outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. ¡Juega a crecer!',
   },
   lessons: [

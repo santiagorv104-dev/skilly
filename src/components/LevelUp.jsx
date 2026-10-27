@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { SkyChameleon } from '../brand';
+import { Kiki } from '../brand';
 import { useStore } from '../state.jsx';
 
-// Vigila el nivel: cuando sube, muestra a Sky celebrando (cambia de color).
+// Vigila el nivel: cuando sube, muestra a Kiki celebrando (cambia de color).
 export default function LevelUp() {
   const { level, state } = useStore();
   const seen = useRef(level);
@@ -23,13 +23,13 @@ export default function LevelUp() {
 }
 
 function LevelUpDialog({ level, onClose }) {
-  // Sky se monta con el nivel anterior y en el siguiente cuadro recibe el nuevo:
+  // Kiki se monta con el nivel anterior y en el siguiente cuadro recibe el nuevo:
   // así la animación de color arranca en cuanto aparece el diálogo.
-  const [skyKey, setSkyKey] = useState(level - 1);
+  const [kikiKey, setKikiKey] = useState(level - 1);
   const button = useRef(null);
 
   useEffect(() => {
-    const frame = requestAnimationFrame(() => setSkyKey(level));
+    const frame = requestAnimationFrame(() => setKikiKey(level));
     button.current?.focus();
     const onKey = (event) => event.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
@@ -48,10 +48,10 @@ function LevelUpDialog({ level, onClose }) {
         aria-labelledby="levelup-title"
         onClick={(event) => event.stopPropagation()}
       >
-        <SkyChameleon className="dialog__sky" celebrateKey={skyKey} title="Sky celebrando" />
+        <Kiki className="dialog__kiki" celebrateKey={kikiKey} title="Kiki celebrando" />
         <p className="dialog__kicker">¡Subiste de nivel!</p>
         <h2 id="levelup-title">Nivel {level}</h2>
-        <p className="muted">Sky cambió de color para celebrarlo. Sigue así.</p>
+        <p className="muted">Kiki cambió de color para celebrarlo. Sigue así.</p>
         <button ref={button} className="btn btn--primary" type="button" onClick={onClose}>
           ¡Sigamos!
         </button>

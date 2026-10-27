@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import SkyChameleon from './SkyChameleon.jsx';
+import Kiki from './Kiki.jsx';
 
 const STORAGE_KEY = 'skilly:splash-visto';
 const WORD = 'skilly';
@@ -21,7 +21,7 @@ export function shouldShowSplash() {
 }
 
 /**
- * Pantalla de bienvenida: Sky se dibuja solo, parpadea, aparece "skilly" letra
+ * Pantalla de bienvenida: Kiki se dibuja solo, parpadea, aparece "skilly" letra
  * por letra con el lema y todo se desvanece para dejar ver la app.
  * Con "reducir movimiento" activado se muestra estática y más corta.
  * Clic, toque, Esc, Enter o espacio la saltan.
@@ -74,7 +74,7 @@ export default function SplashScreen({ onDone, tagline = 'Juega a crecer' }) {
 
   return (
     <div className={classes} onClick={() => finishRef.current()} aria-hidden="true">
-      <SkyChameleon className="skilly-splash__sky" title={null} />
+      <Kiki className="skilly-splash__kiki" title={null} />
       <p className="skilly-splash__word">
         {WORD.split('').map((letter, i) => (
           <span key={i} style={{ '--i': i }}>

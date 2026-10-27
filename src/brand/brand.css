@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Skilly · identidad visual de Sky el camaleón
+   Skilly · identidad visual de Kiki el camaleón
    Importar una sola vez en el punto de entrada (main.jsx / layout).
    ========================================================================== */
 
@@ -13,7 +13,7 @@
    El verde y el amarillo NO sirven como color de texto (1,8:1 y 1,2:1 sobre
    lavanda) ni llevan texto blanco encima: para texto usa sus variantes -text. */
 :root {
-  --skilly-purple: #4A2475;        /* morado del logo: marca, títulos, Sky */
+  --skilly-purple: #4A2475;        /* morado del logo: marca, títulos, Kiki */
   --skilly-violet: #6C3CE1;        /* botones e interacciones */
   --skilly-violet-hover: #5B2DC7;  /* hover/activo (blanco encima: 7,9:1) */
   --skilly-lavender: #EEE2FF;      /* fondo */
@@ -28,43 +28,43 @@
   --skilly-font-brand: 'Nunito', 'Baloo 2', ui-rounded, system-ui, sans-serif;
 }
 
-/* --- Sky -------------------------------------------------------------------- */
-.sky {
+/* --- Kiki -------------------------------------------------------------------- */
+.kiki {
   display: block;
   overflow: visible;
   color: var(--skilly-purple); /* trazos y relleno usan currentColor */
 }
 
-.sky-eye {
+.kiki-eye {
   transform-box: fill-box;
   transform-origin: center;
 }
 
-/* Subida de nivel: como buen camaleón, Sky cambia de color un momento. */
-.sky--levelup {
-  animation: sky-levelup 1.4s ease-in-out;
+/* Subida de nivel: como buen camaleón, Kiki cambia de color un momento. */
+.kiki--levelup {
+  animation: kiki-levelup 1.4s ease-in-out;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .sky--levelup {
+  .kiki--levelup {
     transform-origin: 50% 90%;
-    animation: sky-levelup 1.4s ease-in-out, sky-hop 1.4s ease-in-out;
+    animation: kiki-levelup 1.4s ease-in-out, kiki-hop 1.4s ease-in-out;
   }
 }
 
-@keyframes sky-levelup {
+@keyframes kiki-levelup {
   0%, 100% { color: var(--skilly-purple); }
   28%      { color: var(--skilly-green); }
   60%      { color: var(--skilly-yellow); }
 }
 
-@keyframes sky-hop {
+@keyframes kiki-hop {
   0%, 40%, 100% { transform: none; }
   14%           { transform: translateY(-8%) scale(1.04); }
   26%           { transform: translateY(0) scale(0.98); }
 }
 
-/* --- Logotipo: Sky + "skilly" -------------------------------------------- */
+/* --- Logotipo: Kiki + "skilly" -------------------------------------------- */
 .skilly-logo {
   display: inline-flex;
   align-items: center;
@@ -78,7 +78,7 @@
   white-space: nowrap;
 }
 
-.skilly-logo__sky {
+.skilly-logo__kiki {
   width: auto;
   height: 1.2em;
 }
@@ -92,7 +92,7 @@
   gap: 0.12em;
 }
 
-.skilly-logo--stacked .skilly-logo__sky {
+.skilly-logo--stacked .skilly-logo__kiki {
   height: 2.4em;
 }
 
@@ -120,7 +120,7 @@
   pointer-events: none;
 }
 
-.skilly-splash__sky {
+.skilly-splash__kiki {
   width: min(58vw, 260px);
   height: auto;
 }
@@ -146,40 +146,40 @@
 /* Animación completa (~2,5 s). Con "reducir movimiento" no se aplica nada de
    esto y el splash se muestra estático. */
 @media (prefers-reduced-motion: no-preference) {
-  .skilly-splash--animated .sky-stroke {
+  .skilly-splash--animated .kiki-stroke {
     stroke-dasharray: 1 1.2;
     stroke-dashoffset: 1.1;
-    animation: sky-draw var(--dur) var(--delay) cubic-bezier(0.45, 0.05, 0.35, 1) forwards;
+    animation: kiki-draw var(--dur) var(--delay) cubic-bezier(0.45, 0.05, 0.35, 1) forwards;
   }
 
   /* 1) el cuerpo se dibuja de la cabeza a la cola… */
-  .skilly-splash--animated .sky-head    { --delay: 0ms;    --dur: 380ms; }
-  .skilly-splash--animated .sky-back    { --delay: 280ms;  --dur: 760ms; }
-  .skilly-splash--animated .sky-belly   { --delay: 420ms;  --dur: 460ms; }
-  .skilly-splash--animated .sky-hindLeg {
+  .skilly-splash--animated .kiki-head    { --delay: 0ms;    --dur: 380ms; }
+  .skilly-splash--animated .kiki-back    { --delay: 280ms;  --dur: 760ms; }
+  .skilly-splash--animated .kiki-belly   { --delay: 420ms;  --dur: 460ms; }
+  .skilly-splash--animated .kiki-hindLeg {
     --delay: 720ms;
     --dur: 420ms;
     stroke-dashoffset: -1.1;  /* se dibuja desde el lomo hacia el pie */
   }
   /* 2) …y la espiral se enrolla al final, frenando hacia el centro. */
-  .skilly-splash--animated .sky-tail {
+  .skilly-splash--animated .kiki-tail {
     --delay: 1000ms;
     --dur: 480ms;
     animation-timing-function: cubic-bezier(0.25, 0.6, 0.3, 1);
   }
 
-  .skilly-splash--animated .sky-fill {
+  .skilly-splash--animated .kiki-fill {
     opacity: 0;
-    animation: sky-fade 160ms var(--delay) forwards;
+    animation: kiki-fade 160ms var(--delay) forwards;
   }
-  .skilly-splash--animated .sky-toe     { --delay: 860ms; }
-  .skilly-splash--animated .sky-hindTip { --delay: 1020ms; }
+  .skilly-splash--animated .kiki-toe     { --delay: 860ms; }
+  .skilly-splash--animated .kiki-hindTip { --delay: 1020ms; }
 
   /* 3) el ojo aparece y parpadea una vez. */
-  .skilly-splash--animated .sky-eye {
+  .skilly-splash--animated .kiki-eye {
     animation:
-      sky-eye-pop 180ms 260ms cubic-bezier(0.3, 1.6, 0.5, 1) both,
-      sky-blink 260ms 1500ms ease-in-out;
+      kiki-eye-pop 180ms 260ms cubic-bezier(0.3, 1.6, 0.5, 1) both,
+      kiki-blink 260ms 1500ms ease-in-out;
   }
 
   /* 4) "skilly" letra por letra y el lema. */
@@ -193,10 +193,10 @@
   }
 }
 
-@keyframes sky-draw     { to { stroke-dashoffset: 0; } }
-@keyframes sky-fade     { to { opacity: 1; } }
-@keyframes sky-eye-pop  { from { transform: scale(0); } to { transform: scale(1); } }
-@keyframes sky-blink {
+@keyframes kiki-draw     { to { stroke-dashoffset: 0; } }
+@keyframes kiki-fade     { to { opacity: 1; } }
+@keyframes kiki-eye-pop  { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes kiki-blink {
   0%, 100% { transform: scaleY(1); }
   45%, 55% { transform: scaleY(0.1); }
 }

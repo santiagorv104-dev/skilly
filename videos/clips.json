@@ -1,0 +1,38 @@
+{
+  "_fuente": "Clips de Pexels (https://www.pexels.com/license/): uso gratuito, también comercial, sin atribución obligatoria. 'pexels' es el id del video en pexels.com/video/<id>.",
+  "liderazgo": {
+    "intro": { "pexels": 6193964, "archivo": "6193964-hd_1280_720_25fps.mp4" },
+    "l1": { "pexels": 7686627, "archivo": "7686627-hd_1280_720_24fps.mp4" },
+    "l2": { "pexels": 7581218, "archivo": "7581218-hd_1280_720_30fps.mp4" },
+    "l3": { "pexels": 6602693, "archivo": "6602693-hd_1280_720_25fps.mp4" },
+    "l4": { "pexels": 5726136, "archivo": "5726136-hd_1280_720_30fps.mp4" }
+  },
+  "comunicacion": {
+    "intro": { "pexels": 8716788, "archivo": "8716788-hd_1280_720_25fps.mp4" },
+    "l1": { "pexels": 7647686, "archivo": "7647686-hd_1280_720_30fps.mp4" },
+    "l2": { "pexels": 7682546, "archivo": "7682546-hd_1280_720_24fps.mp4" },
+    "l3": { "pexels": 8136089, "archivo": "8136089-hd_1280_720_50fps.mp4" },
+    "l4": { "pexels": 20065494, "archivo": "20065494-hd_1280_720_30fps.mp4" }
+  },
+  "equipo": {
+    "intro": { "pexels": 7507665, "archivo": "7507665-hd_1280_720_25fps.mp4" },
+    "l1": { "pexels": 6248642, "archivo": "6248642-hd_1280_720_25fps.mp4" },
+    "l2": { "pexels": 7688001, "archivo": "7688001-hd_1280_720_30fps.mp4" },
+    "l3": { "pexels": 7507758, "archivo": "7507758-hd_1280_720_25fps.mp4" },
+    "l4": { "pexels": 5486226, "archivo": "5486226-hd_1366_720_25fps.mp4" }
+  },
+  "resiliencia": {
+    "intro": { "pexels": 14458139, "archivo": "14458139-hd_1280_720_24fps.mp4" },
+    "l1": { "pexels": 8456657, "archivo": "8456657-hd_1280_720_25fps.mp4" },
+    "l2": { "pexels": 5212605, "archivo": "5212605-hd_1280_720_25fps.mp4" },
+    "l3": { "pexels": 6290473, "archivo": "6290473-hd_1280_720_30fps.mp4" },
+    "l4": { "pexels": 9569877, "archivo": "9569877-hd_1366_720_25fps.mp4" }
+  },
+  "resolucion": {
+    "intro": { "pexels": 7683084, "archivo": "7683084-hd_1280_720_24fps.mp4" },
+    "l1": { "pexels": 8512857, "archivo": "8512857-hd_1280_720_30fps.mp4" },
+    "l2": { "pexels": 6804113, "archivo": "6804113-hd_1366_720_25fps.mp4" },
+    "l3": { "pexels": 9365505, "archivo": "9365505-hd_1280_720_25fps.mp4" },
+    "l4": { "pexels": 31575762, "archivo": "13456554_1280_720_30fps.mp4" }
+  }
+}

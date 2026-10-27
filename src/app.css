@@ -127,7 +127,7 @@ a { color: var(--skilly-violet); font-weight: 800; }
   padding-top: 1rem;
 }
 .hero__text { display: grid; gap: 1rem; justify-items: start; }
-.hero__sky { width: 100%; max-width: 420px; height: auto; justify-self: center; }
+.hero__kiki { width: 100%; max-width: 420px; height: auto; justify-self: center; }
 
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .steps .card { display: grid; gap: 0.4rem; align-content: start; }
@@ -185,11 +185,11 @@ a { color: var(--skilly-violet); font-weight: 800; }
 .feedback--right { background: #DCFCE7; color: var(--skilly-green-text); }
 .feedback--wrong { background: var(--skilly-error-bg); color: var(--skilly-error); }
 
-.sky-md { width: min(200px, 60%); height: auto; }
+.kiki-md { width: min(200px, 60%); height: auto; }
 
 /* --- Inicio ------------------------------------------------------------------ */
 .welcome { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; }
-.welcome__sky { width: 150px; height: auto; }
+.welcome__kiki { width: 150px; height: auto; }
 .xp { display: grid; gap: 0.35rem; max-width: 420px; }
 .xp__labels { display: flex; justify-content: space-between; font-weight: 800; color: var(--skilly-purple); }
 .xp__track { height: 14px; border-radius: 999px; background: var(--skilly-lavender); overflow: hidden; }
@@ -278,7 +278,7 @@ a.lesson-row:hover { outline: 2px solid var(--skilly-violet); }
   width: min(380px, 100%); padding: 1.75rem 1.5rem;
   background: var(--skilly-white); border-radius: 24px; box-shadow: var(--shadow);
 }
-.dialog__sky { width: 190px; height: auto; margin-bottom: 0.5rem; }
+.dialog__kiki { width: 190px; height: auto; margin-bottom: 0.5rem; }
 .dialog__kicker { color: var(--skilly-green-text); font-weight: 900; }
 .dialog .btn { margin-top: 0.75rem; }
 
@@ -290,7 +290,7 @@ a.lesson-row:hover { outline: 2px solid var(--skilly-violet); }
 /* --- Móvil ----------------------------------------------------------------------- */
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; }
-  .hero__sky { max-width: 260px; grid-row: 1; }
+  .hero__kiki { max-width: 260px; grid-row: 1; }
   .welcome { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .welcome .xp { margin: 0 auto; width: 100%; }
 }

@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { SKY_EYE, SKY_FILLS, SKY_STROKE, SKY_STROKES, SKY_VIEWBOX } from './skyPaths.js';
+import { KIKI_EYE, KIKI_FILLS, KIKI_STROKE, KIKI_STROKES, KIKI_VIEWBOX } from './kikiPaths.js';
 
 /**
- * Sky, el camaleón de Skilly, en SVG vectorial animable por partes.
+ * Kiki, el camaleón de Skilly, en SVG vectorial animable por partes.
  *
- * - title: texto accesible. Pasa null si Sky es decorativo (p. ej. junto a la palabra "skilly").
- * - celebrateKey: cuando aumenta (p. ej. el nivel del usuario), Sky cambia de color
+ * - title: texto accesible. Pasa null si Kiki es decorativo (p. ej. junto a la palabra "skilly").
+ * - celebrateKey: cuando aumenta (p. ej. el nivel del usuario), Kiki cambia de color
  *   brevemente: morado → verde → amarillo → morado.
  * - El color sale de `color` (currentColor); por defecto, --skilly-purple.
  */
-export default function SkyChameleon({
-  title = 'Sky, el camaleón de Skilly',
+export default function Kiki({
+  title = 'Kiki, el camaleón de Skilly',
   celebrateKey,
   className = '',
   onAnimationEnd,
@@ -33,15 +33,15 @@ export default function SkyChameleon({
   }, [celebrateKey]);
 
   const handleAnimationEnd = (event) => {
-    if (event.animationName === 'sky-levelup') setCelebrating(false);
+    if (event.animationName === 'kiki-levelup') setCelebrating(false);
     onAnimationEnd?.(event);
   };
 
-  const classes = ['sky', celebrating && 'sky--levelup', className].filter(Boolean).join(' ');
+  const classes = ['kiki', celebrating && 'kiki--levelup', className].filter(Boolean).join(' ');
 
   return (
     <svg
-      viewBox={SKY_VIEWBOX}
+      viewBox={KIKI_VIEWBOX}
       className={classes}
       role={title ? 'img' : undefined}
       aria-hidden={title ? undefined : true}
@@ -53,19 +53,19 @@ export default function SkyChameleon({
       <g
         fill="none"
         stroke="currentColor"
-        strokeWidth={SKY_STROKE}
+        strokeWidth={KIKI_STROKE}
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {SKY_STROKES.map(({ id, d }) => (
-          <path key={id} className={`sky-stroke sky-${id}`} d={d} pathLength={1} />
+        {KIKI_STROKES.map(({ id, d }) => (
+          <path key={id} className={`kiki-stroke kiki-${id}`} d={d} pathLength={1} />
         ))}
       </g>
       <g fill="currentColor">
-        {SKY_FILLS.map(({ id, d }) => (
-          <path key={id} className={`sky-fill sky-${id}`} d={d} />
+        {KIKI_FILLS.map(({ id, d }) => (
+          <path key={id} className={`kiki-fill kiki-${id}`} d={d} />
         ))}
-        <circle className="sky-eye" cx={SKY_EYE.cx} cy={SKY_EYE.cy} r={SKY_EYE.r} />
+        <circle className="kiki-eye" cx={KIKI_EYE.cx} cy={KIKI_EYE.cy} r={KIKI_EYE.r} />
       </g>
     </svg>
   );

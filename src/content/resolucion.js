@@ -6,7 +6,7 @@ export const RESOLUCION = {
   certText: 'definir problemas, encontrar la causa raíz, generar alternativas, priorizar y probar soluciones',
   passScore: 70,
   video: {
-    intro: 'Hola, soy Sky. En este módulo vas a entrenar la resolución de problemas: analizar, priorizar y encontrar salidas.',
+    intro: 'Hola, soy Kiki. En este módulo vas a entrenar la resolución de problemas: analizar, priorizar y encontrar salidas.',
     outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. ¡Juega a crecer!',
   },
   lessons: [

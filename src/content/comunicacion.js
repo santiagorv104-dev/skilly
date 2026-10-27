@@ -6,7 +6,7 @@ export const COMUNICACION = {
   certText: 'mensajes claros con la idea principal primero, expresión oral, comunicación no verbal y escritura profesional',
   passScore: 70,
   video: {
-    intro: 'Hola, soy Sky. En este módulo vas a entrenar tu comunicación: explicar tus ideas con claridad y seguridad.',
+    intro: 'Hola, soy Kiki. En este módulo vas a entrenar tu comunicación: explicar tus ideas con claridad y seguridad.',
     outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. ¡Juega a crecer!',
   },
   lessons: [

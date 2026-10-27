@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SkyChameleon } from '../brand';
+import { Kiki } from '../brand';
 import { useStore, XP } from '../state.jsx';
 import { go } from '../router.js';
 import { MODULES, PROFILE_QUESTIONS, orderedModules } from '../content/modules.js';
@@ -15,7 +15,7 @@ export default function Profile() {
     return (
       <div className="container container--narrow">
         <section className="card center stack" aria-labelledby="profile-done">
-          <SkyChameleon className="sky-md" />
+          <Kiki className="kiki-md" />
           <h1 id="profile-done">¡Tu ruta está lista!</h1>
           <p className="lead">
             Empezamos por <strong>{first.title}</strong> y luego seguimos con las otras{' '}

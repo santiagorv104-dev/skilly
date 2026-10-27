@@ -1,4 +1,4 @@
-import { SkyChameleon } from '../brand';
+import { Kiki } from '../brand';
 import { useStore } from '../state.jsx';
 import XpBar from '../components/XpBar.jsx';
 import { MODULES, orderedModules } from '../content/modules.js';
@@ -37,10 +37,10 @@ export default function Home() {
   return (
     <div className="container stack-lg">
       <section className="card welcome" aria-labelledby="welcome-title">
-        <SkyChameleon className="welcome__sky" celebrateKey={level} title="Sky" />
+        <Kiki className="welcome__kiki" celebrateKey={level} title="Kiki" />
         <div className="stack">
           <h1 id="welcome-title">¡Hola, {firstName}!</h1>
-          <p className="muted">Cada lección suma XP. Cuando subes de nivel, Sky cambia de color.</p>
+          <p className="muted">Cada lección suma XP. Cuando subes de nivel, Kiki cambia de color.</p>
           <XpBar />
         </div>
       </section>

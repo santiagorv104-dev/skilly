@@ -1,11 +1,11 @@
 {
   "name": "skilly-videos",
   "private": true,
-  "description": "Genera el video animado de Sky para cada módulo (MP4 + póster + subtítulos).",
+  "description": "Genera el video de cada módulo: clips de Pexels, Kiki animado y voz Piper (MP4 + póster + subtítulos).",
   "type": "module",
   "scripts": {
-    "frases": "node render.mjs --frases",
-    "render": "node render.mjs"
+    "render": "node render.mjs",
+    "muestras-voz": "node piper.mjs --muestras"
   },
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "1.1.0",

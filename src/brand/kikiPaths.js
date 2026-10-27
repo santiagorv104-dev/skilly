@@ -1,12 +1,12 @@
-// Geometría de Sky, calcada del logo original (public/logo.png, 565×436 px).
+// Geometría de Kiki, calcada del logo original (public/logo.png, 565×436 px).
 // Cada trazo es la línea central del original, con su mismo grosor y puntas
 // redondeadas. Están separados por partes y ordenados de la cabeza a la cola
 // para poder animarlos uno a uno.
 
-export const SKY_VIEWBOX = '6 44 495 327';
-export const SKY_STROKE = 23.6;
+export const KIKI_VIEWBOX = '6 44 495 327';
+export const KIKI_STROKE = 23.6;
 
-export const SKY_STROKES = [
+export const KIKI_STROKES = [
   {
     // Contorno superior de la cabeza: del hocico a la nuca.
     id: 'head',
@@ -35,9 +35,9 @@ export const SKY_STROKES = [
 ];
 
 // Puntas afiladas del original que un trazo redondeado no reproduce.
-export const SKY_FILLS = [
+export const KIKI_FILLS = [
   { id: 'toe', d: 'M182 288 C180 298 172 308 160 318 L186 315 L199 297 Z' },
   { id: 'hindTip', d: 'M424 158.5 C440 168 452 184 467 213 L475 196 L462 146 L436 148 Z M436 141 L447 131 L449 147 Z' },
 ];
 
-export const SKY_EYE = { cx: 82, cy: 169, r: 13 };
+export const KIKI_EYE = { cx: 82, cy: 169, r: 13 };

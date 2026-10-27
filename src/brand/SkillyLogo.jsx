@@ -1,10 +1,10 @@
-import SkyChameleon from './SkyChameleon.jsx';
+import Kiki from './Kiki.jsx';
 
 /**
- * Logotipo de Skilly: Sky el camaleón junto a la palabra "skilly".
+ * Logotipo de Skilly: Kiki el camaleón junto a la palabra "skilly".
  *
  * - size: 'sm' (barra de navegación) | 'md' (login, certificado) | 'lg' (landing).
- * - stacked: Sky encima de la palabra en lugar de al lado.
+ * - stacked: Kiki encima de la palabra en lugar de al lado.
  * - as: elemento raíz ('span' por defecto; usa 'a' o el Link de tu router para enlazar).
  */
 export default function SkillyLogo({
@@ -26,7 +26,7 @@ export default function SkillyLogo({
 
   return (
     <Root className={classes} {...rest}>
-      <SkyChameleon className="skilly-logo__sky" title={null} celebrateKey={celebrateKey} />
+      <Kiki className="skilly-logo__kiki" title={null} celebrateKey={celebrateKey} />
       <span className="skilly-logo__word">skilly</span>
     </Root>
   );

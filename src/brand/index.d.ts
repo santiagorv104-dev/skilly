@@ -1,13 +1,13 @@
 ﻿// Tipos para proyectos TypeScript (los componentes están en .jsx).
 import type { ComponentPropsWithoutRef, ElementType, ReactElement } from 'react';
 
-export interface SkyChameleonProps extends ComponentPropsWithoutRef<'svg'> {
-  /** Texto accesible; null si Sky es decorativo. */
+export interface KikiProps extends ComponentPropsWithoutRef<'svg'> {
+  /** Texto accesible; null si Kiki es decorativo. */
   title?: string | null;
-  /** Al aumentar (p. ej. el nivel), Sky cambia de color brevemente. */
+  /** Al aumentar (p. ej. el nivel), Kiki cambia de color brevemente. */
   celebrateKey?: number | string;
 }
-export function SkyChameleon(props: SkyChameleonProps): ReactElement;
+export function Kiki(props: KikiProps): ReactElement;
 
 export interface SkillyLogoProps {
   size?: 'sm' | 'md' | 'lg';
@@ -27,8 +27,8 @@ export interface SplashScreenProps {
 export function SplashScreen(props: SplashScreenProps): ReactElement;
 export function shouldShowSplash(): boolean;
 
-export const SKY_VIEWBOX: string;
-export const SKY_STROKE: number;
-export const SKY_STROKES: ReadonlyArray<{ id: string; d: string }>;
-export const SKY_FILLS: ReadonlyArray<{ id: string; d: string }>;
-export const SKY_EYE: { cx: number; cy: number; r: number };
+export const KIKI_VIEWBOX: string;
+export const KIKI_STROKE: number;
+export const KIKI_STROKES: ReadonlyArray<{ id: string; d: string }>;
+export const KIKI_FILLS: ReadonlyArray<{ id: string; d: string }>;
+export const KIKI_EYE: { cx: number; cy: number; r: number };

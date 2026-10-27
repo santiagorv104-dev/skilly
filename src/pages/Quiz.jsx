@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SkyChameleon } from '../brand';
+import { Kiki } from '../brand';
 import { useStore, XP } from '../state.jsx';
 
 // Orden aleatorio de las opciones de cada pregunta, para que la respuesta
@@ -49,7 +49,7 @@ export default function Quiz({ module }) {
     return (
       <div className="container container--narrow">
         <section className="card stack center" aria-live="polite">
-          <SkyChameleon className="sky-md" />
+          <Kiki className="kiki-md" />
           {result.passed ? (
             <>
               <h1 className="h2">¡Aprobaste con {result.score}%!</h1>

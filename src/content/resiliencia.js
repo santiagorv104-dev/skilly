@@ -6,7 +6,7 @@ export const RESILIENCIA = {
   certText: 'aprender de los errores, manejar el estrés, recuperarse de los rechazos y mentalidad de crecimiento',
   passScore: 70,
   video: {
-    intro: 'Hola, soy Sky. En este módulo vas a entrenar tu resiliencia: aprender de los errores y seguir adelante.',
+    intro: 'Hola, soy Kiki. En este módulo vas a entrenar tu resiliencia: aprender de los errores y seguir adelante.',
     outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. ¡Juega a crecer!',
   },
   lessons: [

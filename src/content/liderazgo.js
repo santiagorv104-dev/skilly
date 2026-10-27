@@ -6,7 +6,7 @@ export const LIDERAZGO = {
   certText: 'liderar con el ejemplo, escucha activa, feedback con el modelo SCI, toma de decisiones y delegación',
   passScore: 70,
   video: {
-    intro: 'Hola, soy Sky. En este módulo vas a entrenar tu liderazgo: inspirar, escuchar, dar feedback y decidir con tu equipo.',
+    intro: 'Hola, soy Kiki. En este módulo vas a entrenar tu liderazgo: inspirar, escuchar, dar feedback y decidir con tu equipo.',
     outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. ¡Juega a crecer!',
   },
   lessons: [

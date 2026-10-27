@@ -13,7 +13,7 @@ export function getModule(id) {
 
 // Archivos del video de cada módulo (generados con videos/render.mjs).
 export function videoFiles(id) {
-  return { src: `videos/${id}.mp4`, poster: `videos/${id}.png`, captions: `videos/${id}.vtt` };
+  return { src: `videos/${id}.mp4`, poster: `videos/${id}.jpg`, captions: `videos/${id}.vtt` };
 }
 
 // Preguntas de perfilación (versión corta del flujo 5.1–5.5).

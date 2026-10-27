@@ -29,7 +29,7 @@ export default function Module({ module }) {
       <section className="card video" aria-labelledby="video-title">
         <div className="row row--between">
           <h2 id="video-title" className="h3">Video del módulo</h2>
-          <span className="small muted">1 min · con subtítulos</span>
+          <span className="small muted">~1 min · con subtítulos</span>
         </div>
         <video
           className="video__player"
@@ -43,7 +43,7 @@ export default function Module({ module }) {
           <track kind="captions" src={video.captions} srcLang="es" label="Español" default />
           Tu navegador no puede reproducir este video.
         </video>
-        <p className="small muted">Sky te resume las ideas clave del módulo. Video animado con voz generada por computadora.</p>
+        <p className="small muted">Kiki te resume las ideas clave del módulo. Imágenes de Pexels · narración con voz sintética.</p>
       </section>
 
       <ol className="lessons">
