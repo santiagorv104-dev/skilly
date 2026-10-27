@@ -1,22 +1,22 @@
 import { useStore, XP } from '../state.jsx';
 import { go } from '../router.js';
-import { LIDERAZGO } from '../content/liderazgo.js';
 
-export default function Lesson({ index }) {
+export default function Lesson({ module, index }) {
   const { state, dispatch } = useStore();
-  const lesson = LIDERAZGO.lessons[index];
+  const lesson = module.lessons[index];
+  const base = `/modulo/${module.id}`;
 
   if (!lesson) {
     return (
       <div className="container container--narrow">
-        <p>Esta lección no existe. <a href="#/modulo/liderazgo">Volver al módulo</a></p>
+        <p>Esta lección no existe. <a href={`#${base}`}>Volver al módulo</a></p>
       </div>
     );
   }
 
   const done = state.lessonsDone[lesson.id];
-  const isLast = index === LIDERAZGO.lessons.length - 1;
-  const nextHref = isLast ? '/modulo/liderazgo' : `/modulo/liderazgo/leccion/${index + 2}`;
+  const isLast = index === module.lessons.length - 1;
+  const nextHref = isLast ? base : `${base}/leccion/${index + 2}`;
 
   const complete = () => {
     dispatch({ type: 'lesson', id: lesson.id });
@@ -26,8 +26,8 @@ export default function Lesson({ index }) {
   return (
     <div className="container container--narrow">
       <article className="card stack lesson" aria-labelledby="lesson-title">
-        <a className="back" href="#/modulo/liderazgo">← Liderazgo</a>
-        <p className="kicker">Lección {index + 1} de {LIDERAZGO.lessons.length} · {lesson.minutes} min</p>
+        <a className="back" href={`#${base}`}>← {module.title}</a>
+        <p className="kicker">Lección {index + 1} de {module.lessons.length} · {lesson.minutes} min</p>
         <h1 id="lesson-title">{lesson.title}</h1>
         {lesson.body.map((p) => (
           <p key={p}>{p}</p>
@@ -38,7 +38,7 @@ export default function Lesson({ index }) {
         </aside>
         <div className="row row--between">
           {index > 0 ? (
-            <a className="btn btn--text" href={`#/modulo/liderazgo/leccion/${index}`}>Anterior</a>
+            <a className="btn btn--text" href={`#${base}/leccion/${index}`}>Anterior</a>
           ) : (
             <span />
           )}

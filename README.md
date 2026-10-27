@@ -15,10 +15,12 @@ Cada cambio que se sube a `main` se publica solo en ese link (workflow
   enrolla, el ojo parpadea y aparece "skilly" letra por letra con el lema. Se ve
   una vez por sesión y es estático si el sistema tiene "reducir movimiento".
 - **Landing**, **registro e inicio de sesión**.
-- **Perfilación**: 5 preguntas que definen tu ruta.
+- **Perfilación**: 5 preguntas que definen tu ruta (empieza por la habilidad que elijas).
 - **Inicio**: Sky, nivel y barra de XP, ruta de módulos y logros.
-- **Módulo de Liderazgo**: 4 lecciones y un reto final (70 % para aprobar).
-- **Certificado** del módulo, listo para imprimir o guardar como PDF.
+- **Cinco módulos**: Liderazgo, Comunicación efectiva, Trabajo en equipo,
+  Resiliencia y Resolución de problemas. Cada uno con un video de Sky,
+  4 lecciones y un reto final (70 % para aprobar).
+- **Certificado** de cada módulo, listo para imprimir o guardar como PDF.
 - **Subida de nivel**: Sky cambia de color (morado → verde → amarillo → morado).
 - Favicon, íconos y `manifest.json` para instalarla como app.
 
@@ -43,8 +45,24 @@ public/            logo original, logo.svg, favicon, íconos y manifest.json
 src/brand/         identidad: Sky en SVG animable, logotipo, splash y paleta
 src/pages/         pantallas (landing, acceso, perfilación, inicio, módulo, reto, certificado)
 src/components/    barra de navegación, barra de XP y diálogo de subida de nivel
-src/content/       textos de la ruta, la perfilación y el módulo de Liderazgo
+src/content/       textos de la perfilación y de los cinco módulos (lecciones, retos, guiones)
+videos/            generador de los videos de Sky (voz de Windows + ffmpeg)
 src/state.jsx      cuenta, XP, niveles y progreso
+```
+
+## Videos de los módulos
+
+Cada módulo tiene un video de ~1 minuto: Sky se dibuja, presenta el módulo y
+resume la idea clave de cada lección. Están en `public/videos/` (MP4, póster y
+subtítulos `.vtt`). Se generan con `videos/` a partir de los textos de
+`src/content/` (campos `video.intro`, `video.outro` y `say` de cada lección),
+con la voz "Laura" de Windows. Para regenerarlos, en Windows y dentro de `videos/`:
+
+```powershell
+npm install
+node render.mjs --frases
+foreach ($m in "liderazgo","comunicacion","equipo","resiliencia","resolucion") { & .\tts.ps1 -Json ".cache\$m\frases.json" -OutDir ".cache\$m\voz" }
+node render.mjs
 ```
 
 ## Identidad visual

@@ -1,16 +1,20 @@
+import { LIDERAZGO } from './liderazgo.js';
+import { COMUNICACION } from './comunicacion.js';
+import { EQUIPO } from './equipo.js';
+import { RESILIENCIA } from './resiliencia.js';
+import { RESOLUCION } from './resolucion.js';
+
 // Ruta de habilidades blandas (las cinco que mide la perfilación).
-export const MODULES = [
-  {
-    id: 'liderazgo',
-    title: 'Liderazgo',
-    summary: 'Inspira, escucha, da feedback y decide con tu equipo.',
-    available: true,
-  },
-  { id: 'comunicacion', title: 'Comunicación efectiva', summary: 'Explica tus ideas con claridad y seguridad.', available: false },
-  { id: 'equipo', title: 'Trabajo en equipo', summary: 'Colabora, acuerda y cumple con otros.', available: false },
-  { id: 'resiliencia', title: 'Resiliencia', summary: 'Aprende de los errores y sigue adelante.', available: false },
-  { id: 'resolucion', title: 'Resolución de problemas', summary: 'Analiza, prioriza y encuentra salidas.', available: false },
-];
+export const MODULES = [LIDERAZGO, COMUNICACION, EQUIPO, RESILIENCIA, RESOLUCION];
+
+export function getModule(id) {
+  return MODULES.find((m) => m.id === id);
+}
+
+// Archivos del video de cada módulo (generados con videos/render.mjs).
+export function videoFiles(id) {
+  return { src: `videos/${id}.mp4`, poster: `videos/${id}.png`, captions: `videos/${id}.vtt` };
+}
 
 // Preguntas de perfilación (versión corta del flujo 5.1–5.5).
 export const PROFILE_QUESTIONS = [
@@ -37,6 +41,12 @@ export const PROFILE_QUESTIONS = [
   {
     id: 'habilidad',
     question: '¿Qué habilidad quieres fortalecer primero?',
-    options: ['Liderazgo', 'Comunicación efectiva', 'Trabajo en equipo', 'Resiliencia', 'Resolución de problemas'],
+    options: MODULES.map((m) => m.title),
   },
 ];
+
+// La ruta empieza por la habilidad que la persona eligió en la perfilación.
+export function orderedModules(profile) {
+  const first = MODULES.find((m) => m.title === profile?.habilidad);
+  return first ? [first, ...MODULES.filter((m) => m !== first)] : MODULES;
+}

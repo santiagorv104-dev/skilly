@@ -1,17 +1,17 @@
 import { SkillyLogo } from '../brand';
 import { useStore } from '../state.jsx';
 
-export default function Certificate() {
+export default function Certificate({ module }) {
   const { state } = useStore();
-  const cert = state.certificates.liderazgo;
+  const cert = state.certificates[module.id];
 
   if (!cert) {
     return (
       <div className="container container--narrow">
         <section className="card stack center">
           <h1 className="h2">Aún no tienes este certificado</h1>
-          <p className="muted">Aprueba el reto final del módulo de Liderazgo para obtenerlo.</p>
-          <a className="btn btn--primary" href="#/modulo/liderazgo">Ir al módulo</a>
+          <p className="muted">Aprueba el reto final del módulo de {module.title} para obtenerlo.</p>
+          <a className="btn btn--primary" href={`#/modulo/${module.id}`}>Ir al módulo</a>
         </section>
       </div>
     );
@@ -34,8 +34,7 @@ export default function Certificate() {
         <p className="muted">Se otorga a</p>
         <h1 id="cert-name" className="certificate__name">{state.account.name}</h1>
         <p className="certificate__text">
-          por completar el <strong>Módulo de Liderazgo</strong> de Skilly: liderar con el ejemplo, escucha
-          activa, feedback con el modelo SCI, toma de decisiones y delegación.
+          por completar el <strong>Módulo de {module.title}</strong> de Skilly: {module.certText}.
         </p>
         <div className="certificate__foot">
           <div>

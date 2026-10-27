@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { SplashScreen, shouldShowSplash } from './brand';
 import { StoreProvider, useStore } from './state.jsx';
 import { useRoute } from './router.js';
+import { getModule } from './content/modules.js';
 import NavBar from './components/NavBar.jsx';
 import LevelUp from './components/LevelUp.jsx';
 import Landing from './pages/Landing.jsx';
@@ -47,13 +48,16 @@ function Page({ route }) {
 
   // A partir de aquí, solo con sesión iniciada; la perfilación va primero.
   if (route === '/perfil' || !state.profile) return <Profile />;
-  if (route === '/inicio') return <Home />;
-  if (route === '/modulo/liderazgo') return <Module />;
-  if (route === '/modulo/liderazgo/quiz') return <Quiz />;
-  if (route === '/certificado/liderazgo') return <Certificate />;
 
-  const lesson = route.match(/^\/modulo\/liderazgo\/leccion\/(\d+)$/);
-  if (lesson) return <Lesson index={Number(lesson[1]) - 1} />;
+  const match = route.match(/^\/(modulo|certificado)\/([a-z]+)(?:\/(leccion\/(\d+)|quiz))?$/);
+  const module = match && getModule(match[2]);
+  if (module) {
+    const [, kind, , sub, lessonNumber] = match;
+    if (kind === 'certificado') return <Certificate module={module} />;
+    if (sub === 'quiz') return <Quiz key={module.id} module={module} />;
+    if (lessonNumber) return <Lesson module={module} index={Number(lessonNumber) - 1} />;
+    return <Module module={module} />;
+  }
 
   return <Home />;
 }

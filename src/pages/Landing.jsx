@@ -50,13 +50,10 @@ export default function Landing() {
       </section>
 
       <section aria-labelledby="skills-title" className="stack">
-        <h2 id="skills-title">Las habilidades que piden las empresas</h2>
+        <h2 id="skills-title">Habilidades más demandadas</h2>
         <ul className="pills">
           {MODULES.map((m) => (
-            <li key={m.id} className={m.available ? 'pill pill--on' : 'pill'}>
-              {m.title}
-              {!m.available && <span className="pill__soon">pronto</span>}
-            </li>
+            <li key={m.id} className="pill pill--on">{m.title}</li>
           ))}
         </ul>
       </section>

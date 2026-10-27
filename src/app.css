@@ -146,7 +146,6 @@ a { color: var(--skilly-violet); font-weight: 800; }
 }
 .pill--on { color: var(--skilly-purple); border: 2px solid var(--skilly-purple); }
 .pill--earned { background: var(--skilly-green); color: var(--skilly-purple); border: 2px solid var(--skilly-green); }
-.pill__soon { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
 
 .footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.5rem; border-top: 2px solid var(--skilly-line); }
 
@@ -225,6 +224,16 @@ a.lesson-row:hover { outline: 2px solid var(--skilly-violet); }
 .lesson-row--locked { box-shadow: none; background: rgb(255 255 255 / 0.55); border: 2px dashed var(--skilly-line); }
 .cert-cta { display: grid; gap: 0.2rem; text-decoration: none; color: var(--skilly-purple); border: 3px solid var(--skilly-yellow); }
 
+.h3 { font-size: 1.15rem; }
+.video { display: grid; gap: 0.75rem; }
+.video__player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  background: var(--skilly-lavender);
+}
+
 .lesson { gap: 1rem; }
 .lesson p { font-size: 1.05rem; }
 .key { padding: 1rem; border-radius: 14px; background: var(--skilly-lavender); color: var(--skilly-purple); border-left: 6px solid var(--skilly-yellow); }
@@ -288,7 +297,6 @@ a.lesson-row:hover { outline: 2px solid var(--skilly-violet); }
 @media (max-width: 560px) {
   .nav__inner { gap: 0.6rem; }
   .nav__links { gap: 0.6rem; }
-  .nav__links a[href='#/modulo/liderazgo'] { display: none; }
   .skilly-logo--lg { font-size: 2.6rem; }
   .certificate__foot { grid-template-columns: 1fr; }
 }

@@ -1,0 +1,14 @@
+{
+  "name": "skilly-videos",
+  "private": true,
+  "description": "Genera el video animado de Sky para cada módulo (MP4 + póster + subtítulos).",
+  "type": "module",
+  "scripts": {
+    "frases": "node render.mjs --frases",
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "1.1.0",
+    "@resvg/resvg-js": "2.6.2"
+  }
+}

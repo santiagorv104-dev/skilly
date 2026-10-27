@@ -1,7 +1,14 @@
 export const LIDERAZGO = {
   id: 'liderazgo',
   title: 'Liderazgo',
+  summary: 'Inspira, escucha, da feedback y decide con tu equipo.',
+  badge: 'Líder en formación',
+  certText: 'liderar con el ejemplo, escucha activa, feedback con el modelo SCI, toma de decisiones y delegación',
   passScore: 70,
+  video: {
+    intro: 'Hola, soy Sky. En este módulo vas a entrenar tu liderazgo: inspirar, escuchar, dar feedback y decidir con tu equipo.',
+    outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. ¡Juega a crecer!',
+  },
   lessons: [
     {
       id: 'liderazgo-1',
@@ -12,6 +19,7 @@ export const LIDERAZGO = {
         'Un buen líder da el ejemplo, se hace cargo de los resultados del equipo y reconoce el mérito de los demás. La autoridad que nace del cargo se impone; la que nace del ejemplo se gana.',
       ],
       key: 'Liderar es influir con el ejemplo, no imponer con el cargo.',
+      say: 'Liderar no es mandar: es lograr que el grupo avance, dando el ejemplo y reconociendo el mérito de los demás.',
     },
     {
       id: 'liderazgo-2',
@@ -24,6 +32,7 @@ export const LIDERAZGO = {
         '3. Parafrasea para confirmar: "Si entiendo bien, lo que te preocupa es…".',
       ],
       key: 'Antes de decidir, asegúrate de haber entendido.',
+      say: 'Antes de decidir, escucha: deja terminar, haz preguntas abiertas y parafrasea para confirmar que entendiste.',
     },
     {
       id: 'liderazgo-3',
@@ -35,6 +44,7 @@ export const LIDERAZGO = {
         'Cuando te den feedback a ti: escucha, agradece y pregunta qué harían en tu lugar.',
       ],
       key: 'Habla de hechos y efectos, no de la persona.',
+      say: 'Para dar feedback, usa el modelo de situación, comportamiento e impacto. Habla de hechos, no de la persona.',
     },
     {
       id: 'liderazgo-4',
@@ -45,6 +55,7 @@ export const LIDERAZGO = {
         'Al delegar, deja claro qué se espera, para cuándo, con qué recursos y cómo vas a hacer seguimiento. Luego confía: no rehagas el trabajo de los demás.',
       ],
       key: 'Delegar bien es dar claridad y confianza, no solo tareas.',
+      say: 'Al delegar, deja claro qué esperas, para cuándo y cómo harás el seguimiento. Y luego, confía.',
     },
   ],
   quiz: [

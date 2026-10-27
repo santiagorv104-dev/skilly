@@ -24,8 +24,7 @@ export default function NavBar({ route }) {
         {signedIn ? (
           <>
             <nav className="nav__links" aria-label="Principal">
-              <a href="#/inicio" aria-current={route === '/inicio' ? 'page' : undefined}>Inicio</a>
-              <a href="#/modulo/liderazgo" aria-current={route.startsWith('/modulo') ? 'page' : undefined}>Liderazgo</a>
+              <a href="#/inicio" aria-current={route === '/inicio' ? 'page' : undefined}>Mi ruta</a>
             </nav>
             <span className="chip" title={`${state.xp} XP en total`}>Nivel {level}</span>
             <button className="btn btn--text" type="button" onClick={signOut}>Salir</button>

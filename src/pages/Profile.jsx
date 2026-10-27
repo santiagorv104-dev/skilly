@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { SkyChameleon } from '../brand';
 import { useStore, XP } from '../state.jsx';
 import { go } from '../router.js';
-import { PROFILE_QUESTIONS } from '../content/modules.js';
+import { MODULES, PROFILE_QUESTIONS, orderedModules } from '../content/modules.js';
 
 export default function Profile() {
   const { state, dispatch } = useStore();
@@ -11,15 +11,15 @@ export default function Profile() {
   const done = step === PROFILE_QUESTIONS.length;
 
   if (done) {
-    const first = answers.habilidad;
+    const first = orderedModules(answers)[0];
     return (
       <div className="container container--narrow">
         <section className="card center stack" aria-labelledby="profile-done">
           <SkyChameleon className="sky-md" />
           <h1 id="profile-done">¡Tu ruta está lista!</h1>
           <p className="lead">
-            Empezamos por <strong>Liderazgo</strong>, una de las habilidades que más piden en un primer empleo.
-            {first && first !== 'Liderazgo' && ` ${first} llegará muy pronto a tu ruta.`}
+            Empezamos por <strong>{first.title}</strong> y luego seguimos con las otras{' '}
+            {MODULES.length - 1} habilidades más demandadas en un primer empleo.
           </p>
           {!state.profile && <p className="badge badge--green">+{XP.profile} XP por completar tu perfil</p>}
           <button
