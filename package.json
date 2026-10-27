@@ -2,7 +2,7 @@
   "name": "skilly",
   "private": true,
   "version": "0.1.0",
-  "description": "Skilly: juega a crecer. Ruta gamificada de habilidades para el primer empleo.",
+  "description": "Skilly: porque en Skilly te adaptamos al mercado. Ruta gamificada de habilidades para el primer empleo.",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -7,7 +7,7 @@ export const EQUIPO = {
   passScore: 70,
   video: {
     intro: 'Hola, soy Kiki. En este módulo vas a entrenar el trabajo en equipo: colaborar, ponerse de acuerdo y cumplir con otros.',
-    outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. ¡Juega a crecer!',
+    outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. Porque en Skilly te adaptamos al mercado.',
   },
   lessons: [
     {

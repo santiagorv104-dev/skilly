@@ -1,6 +1,6 @@
 # skilly
 
-**Juega a crecer.** Skilly prepara a jóvenes para su primer empleo con una ruta
+**Porque en Skilly te adaptamos al mercado.** Skilly prepara a jóvenes para su primer empleo con una ruta
 gamificada de habilidades: perfilación corta, lecciones de pocos minutos, XP y
 niveles con Kiki el camaleón, y certificados al aprobar cada módulo.
 

@@ -17,7 +17,7 @@ export default function Landing() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__text">
           <SkillyLogo size="lg" />
-          <h1 id="hero-title">Juega a crecer</h1>
+          <h1 id="hero-title">Porque en Skilly te adaptamos al mercado</h1>
           <p className="lead">
             El primer empleo es el nivel más difícil. Skilly te prepara con retos cortos, una ruta
             hecha para ti y certificados que puedes mostrar.
@@ -60,7 +60,7 @@ export default function Landing() {
 
       <footer className="footer">
         <SkillyLogo size="sm" />
-        <span className="muted">© 2026 Skilly · Juega a crecer</span>
+        <span className="muted">© 2026 Skilly · Porque en Skilly te adaptamos al mercado</span>
       </footer>
     </div>
   );

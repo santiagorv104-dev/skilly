@@ -7,7 +7,7 @@ export const COMUNICACION = {
   passScore: 70,
   video: {
     intro: 'Hola, soy Kiki. En este módulo vas a entrenar tu comunicación: explicar tus ideas con claridad y seguridad.',
-    outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. ¡Juega a crecer!',
+    outro: 'Completa las cuatro lecciones, supera el reto final y gana tu certificado. Porque en Skilly te adaptamos al mercado.',
   },
   lessons: [
     {

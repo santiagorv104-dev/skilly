@@ -26,7 +26,7 @@ export function shouldShowSplash() {
  * Con "reducir movimiento" activado se muestra estática y más corta.
  * Clic, toque, Esc, Enter o espacio la saltan.
  */
-export default function SplashScreen({ onDone, tagline = 'Juega a crecer' }) {
+export default function SplashScreen({ onDone, tagline = 'Porque en Skilly te adaptamos al mercado' }) {
   const [reduced] = useState(prefersReducedMotion);
   const [leaving, setLeaving] = useState(false);
   const onDoneRef = useRef(onDone);

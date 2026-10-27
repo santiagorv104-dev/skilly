@@ -177,7 +177,7 @@ function overlaySvg(module, number, scenes, total, t) {
       const y = 350 + i * 64;
       svg += `<g opacity="${p.o}" transform="translate(0 ${p.dy})"><circle cx="${X + 16}" cy="${y - 12}" r="16" fill="${items[i][0]}"/>${textBlock([items[i][1]], { x: X + 50, y, size: 36, fill: C.ink })}</g>`;
     });
-    svg += `<g opacity="${e.o}" transform="translate(0 ${e.dy})">${textBlock(['Juega a crecer'], { x: X, y: 600, size: 44, weight: 900, fill: C.violet })}</g>`;
+    svg += `<g opacity="${e.o}" transform="translate(0 ${e.dy})">${textBlock(['Porque en Skilly te', 'adaptamos al mercado'], { x: X, y: 580, size: 38, lh: 46, weight: 900, fill: C.violet })}</g>`;
     svg += `<rect x="0" y="${H - 8}" width="${W}" height="8" fill="${C.line}"/>`;
   } else {
     // Sombra para que el texto blanco se lea sobre el video
