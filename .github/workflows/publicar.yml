@@ -1,0 +1,51 @@
+# Cada vez que se sube algo a main: compila la app y actualiza la rama gh-pages,
+# que GitHub Pages publica en https://santiagorv104-dev.github.io/skilly/
+name: Publicar en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Copiar dist/ a la rama gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: sitio
+
+      - name: Publicar
+        run: |
+          find sitio -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -r dist/. sitio/
+          touch sitio/.nojekyll
+          cd sitio
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Sin cambios que publicar"
+            exit 0
+          fi
+          git commit -m "Publicar ${GITHUB_SHA::7}"
+          git push

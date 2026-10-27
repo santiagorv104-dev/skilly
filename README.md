@@ -4,6 +4,11 @@
 gamificada de habilidades: perfilación corta, lecciones de pocos minutos, XP y
 niveles con Sky el camaleón, y certificados al aprobar cada módulo.
 
+**Pruébala:** https://santiagorv104-dev.github.io/skilly/
+
+Cada cambio que se sube a `main` se publica solo en ese link (workflow
+`.github/workflows/publicar.yml`, tarda uno o dos minutos).
+
 ## Qué incluye esta versión
 
 - **Splash** (~2,5 s): Sky se dibuja de la cabeza a la cola, la espiral se
