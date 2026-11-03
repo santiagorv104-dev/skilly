@@ -45,8 +45,10 @@ export const PROFILE_QUESTIONS = [
   },
 ];
 
-// La ruta empieza por la habilidad que la persona eligió en la perfilación.
-export function orderedModules(profile) {
+// Con resultado de la Brújula, la ruta empieza por los módulos con menor puntaje
+// (moduleScores, 0-100). Sin él, por la habilidad elegida en la perfilación.
+export function orderedModules(profile, moduleScores) {
+  if (moduleScores) return [...MODULES].sort((a, b) => moduleScores[a.id] - moduleScores[b.id]);
   const first = MODULES.find((m) => m.title === profile?.habilidad);
   return first ? [first, ...MODULES.filter((m) => m !== first)] : MODULES;
 }

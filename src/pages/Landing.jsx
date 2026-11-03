@@ -3,7 +3,7 @@ import { useStore } from '../state.jsx';
 import { MODULES } from '../content/modules.js';
 
 const STEPS = [
-  { title: 'Cuéntanos tu meta', text: 'Una perfilación corta para saber a dónde quieres llegar y qué habilidades reforzar.' },
+  { title: 'Descubre tu Brújula', text: 'Un diagnóstico de 12 habilidades blandas para saber dónde estás y qué reforzar primero.' },
   { title: 'Sigue tu ruta', text: 'Lecciones de pocos minutos y retos que te dan XP para subir de nivel con Kiki.' },
   { title: 'Demuéstralo', text: 'Aprueba el reto de cada módulo y obtén un certificado para mostrar en tu CV.' },
 ];
@@ -27,7 +27,7 @@ export default function Landing() {
               <a className="btn btn--primary" href="#/inicio">Ir a mi ruta</a>
             ) : (
               <>
-                <a className="btn btn--primary" href="#/registro">Crear cuenta gratis</a>
+                <a className="btn btn--primary" href="#/">Empezar con mi Brújula</a>
                 <a className="btn btn--ghost" href="#/entrar">Ya tengo cuenta</a>
               </>
             )}

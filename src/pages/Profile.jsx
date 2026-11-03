@@ -3,23 +3,25 @@ import { Kiki } from '../brand';
 import { useStore, XP } from '../state.jsx';
 import { go } from '../router.js';
 import { MODULES, PROFILE_QUESTIONS, orderedModules } from '../content/modules.js';
+import { latestBrujula } from '../puente/brujula.js';
 
 export default function Profile() {
   const { state, dispatch } = useStore();
   const [answers, setAnswers] = useState(state.profile ?? {});
   const [step, setStep] = useState(0);
+  const [brujula] = useState(latestBrujula);
   const done = step === PROFILE_QUESTIONS.length;
 
   if (done) {
-    const first = orderedModules(answers)[0];
+    const first = orderedModules(answers, brujula?.moduleScores)[0];
     return (
       <div className="container container--narrow">
         <section className="card center stack" aria-labelledby="profile-done">
           <Kiki className="kiki-md" />
           <h1 id="profile-done">¡Tu ruta está lista!</h1>
           <p className="lead">
-            Empezamos por <strong>{first.title}</strong> y luego seguimos con las otras{' '}
-            {MODULES.length - 1} habilidades más demandadas en un primer empleo.
+            {brujula ? 'Según tu Brújula, empezamos' : 'Empezamos'} por <strong>{first.title}</strong> y luego
+            seguimos con las otras {MODULES.length - 1} habilidades más demandadas en un primer empleo.
           </p>
           {!state.profile && <p className="badge badge--green">+{XP.profile} XP por completar tu perfil</p>}
           <button

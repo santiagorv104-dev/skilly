@@ -8,7 +8,7 @@ export default function NavBar({ route }) {
 
   const signOut = () => {
     dispatch({ type: 'signOut' });
-    go('/');
+    go('/app');
   };
 
   return (
@@ -17,13 +17,14 @@ export default function NavBar({ route }) {
         <SkillyLogo
           size="sm"
           as="a"
-          href={signedIn ? '#/inicio' : '#/'}
+          href={signedIn ? '#/inicio' : '#/app'}
           aria-label="Skilly, inicio"
           celebrateKey={signedIn ? level : undefined}
         />
         {signedIn ? (
           <>
             <nav className="nav__links" aria-label="Principal">
+              <a href="#/">Brújula</a>
               <a href="#/inicio" aria-current={route === '/inicio' ? 'page' : undefined}>Mi ruta</a>
             </nav>
             <span className="chip" title={`${state.xp} XP en total`}>Nivel {level}</span>
@@ -31,6 +32,7 @@ export default function NavBar({ route }) {
           </>
         ) : (
           <nav className="nav__links" aria-label="Cuenta">
+            <a href="#/">Brújula</a>
             <a href="#/entrar">Entrar</a>
             <a className="btn btn--primary btn--sm" href="#/registro">Crear cuenta</a>
           </nav>

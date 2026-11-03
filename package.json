@@ -2,12 +2,13 @@
   "name": "skilly",
   "private": true,
   "version": "0.1.0",
-  "description": "Skilly: porque en Skilly te adaptamos al mercado. Ruta gamificada de habilidades para el primer empleo.",
+  "description": "Skilly: porque en Skilly te adaptamos al mercado. Primero la Brújula de habilidades y después la ruta gamificada para el primer empleo.",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test tests/brujula-puntaje.test.js"
   },
   "dependencies": {
     "react": "^18.3.1",

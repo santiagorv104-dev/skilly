@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { SkillyLogo } from '../brand';
 import { useStore } from '../state.jsx';
 import { go } from '../router.js';
+import { brujulaName } from '../puente/brujula.js';
 
 export default function Auth({ mode }) {
   const { state, dispatch } = useStore();
@@ -43,7 +44,7 @@ export default function Auth({ mode }) {
           {registering && (
             <label>
               Nombre
-              <input name="name" autoComplete="name" required minLength={2} placeholder="Tu nombre y apellido" />
+              <input name="name" autoComplete="name" required minLength={2} placeholder="Tu nombre y apellido" defaultValue={brujulaName()} />
             </label>
           )}
           <label>

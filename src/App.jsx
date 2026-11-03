@@ -13,6 +13,7 @@ import Module from './pages/Module.jsx';
 import Lesson from './pages/Lesson.jsx';
 import Quiz from './pages/Quiz.jsx';
 import Certificate from './pages/Certificate.jsx';
+import BrujulaParte, { brujulaPage } from './puente/BrujulaParte.jsx';
 
 export default function App() {
   const [splash, setSplash] = useState(shouldShowSplash);
@@ -25,8 +26,11 @@ export default function App() {
   );
 }
 
+// Primero la Brújula (#/ y sus rutas), después la app (#/app y el resto).
 function Shell() {
   const route = useRoute();
+  const brujula = brujulaPage(route);
+  if (brujula) return <BrujulaParte route={route} page={brujula} />;
   return (
     <>
       <NavBar route={route} />
@@ -44,7 +48,7 @@ function Page({ route }) {
 
   if (route === '/entrar') return <Auth mode="signin" />;
   if (route === '/registro') return <Auth mode="register" />;
-  if (route === '/' || !signedIn) return <Landing />;
+  if (route === '/app' || !signedIn) return <Landing />;
 
   // A partir de aquí, solo con sesión iniciada; la perfilación va primero.
   if (route === '/perfil' || !state.profile) return <Profile />;

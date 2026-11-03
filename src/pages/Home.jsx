@@ -1,7 +1,10 @@
+import { useMemo } from 'react';
 import { Kiki } from '../brand';
 import { useStore } from '../state.jsx';
 import XpBar from '../components/XpBar.jsx';
 import { MODULES, orderedModules } from '../content/modules.js';
+import { latestBrujula } from '../puente/brujula.js';
+import { formatDate } from '../brujula/lib/puntaje.js';
 
 // Siguiente paso dentro de un módulo.
 export function nextStep(state, module) {
@@ -23,7 +26,8 @@ export function moduleProgress(state, module) {
 export default function Home() {
   const { state, level } = useStore();
   const firstName = state.account.name.split(' ')[0];
-  const modules = orderedModules(state.profile);
+  const brujula = useMemo(() => latestBrujula(), []);
+  const modules = orderedModules(state.profile, brujula?.moduleScores);
   const anyLesson = Object.keys(state.lessonsDone).length > 0;
   const passedCount = MODULES.filter((m) => state.quiz[m.id]?.passed).length;
 
@@ -45,6 +49,8 @@ export default function Home() {
         </div>
       </section>
 
+      <BrujulaCard brujula={brujula} />
+
       <section className="stack" aria-labelledby="route-title">
         <div className="row row--between">
           <h2 id="route-title">Tu ruta</h2>
@@ -61,10 +67,13 @@ export default function Home() {
                   {passed ? (
                     <span className="badge badge--green">Completado</span>
                   ) : (
-                    i === 0 && lessonsDone === 0 && <span className="badge">Tu primera meta</span>
+                    i === 0 && lessonsDone === 0 && (
+                      <span className="badge">{brujula ? 'Tu prioridad' : 'Tu primera meta'}</span>
+                    )
                   )}
                 </div>
                 <p className="muted">{m.summary}</p>
+                {brujula && <p className="small muted">Tu Brújula en esta habilidad: {brujula.moduleScores[m.id]} de 100</p>}
                 <div className="bar" aria-hidden="true"><span style={{ width: `${percent}%` }} /></div>
                 <p className="small">{lessonsDone} de {m.lessons.length} lecciones · reto {passed ? 'aprobado' : 'pendiente'}</p>
                 <div className="row">
@@ -88,5 +97,44 @@ export default function Home() {
         </ul>
       </section>
     </div>
+  );
+}
+
+// Resumen de la Brújula (primera parte del recorrido) dentro de la app.
+function BrujulaCard({ brujula }) {
+  if (!brujula) {
+    return (
+      <section className="card brujula-card" aria-labelledby="brujula-title">
+        <div className="stack">
+          <h2 id="brujula-title" className="h3">Haz tu Brújula</h2>
+          <p className="muted">Un diagnóstico de 12 habilidades blandas. Con tu resultado ordenamos tu ruta por prioridades.</p>
+        </div>
+        <a className="btn btn--primary" href="#/">Ir a la Brújula</a>
+      </section>
+    );
+  }
+  const { report, version, date, type } = brujula;
+  return (
+    <section className="card brujula-card" aria-labelledby="brujula-title">
+      <div className="stack">
+        <h2 id="brujula-title" className="h3">Tu Brújula</h2>
+        <p className="small muted">Versión {version.name} · {formatDate(date)}</p>
+        <div className="brujula-card__rows">
+          <span className="small">Fortalezas</span>
+          <ul className="pills">
+            {report.strengths.map((s) => (
+              <li key={s.id} className="pill pill--earned">{s.short} {s.index}</li>
+            ))}
+          </ul>
+          <span className="small">Prioridades</span>
+          <ul className="pills">
+            {report.priorities.map((s) => (
+              <li key={s.id} className="pill pill--on">{s.short} {s.index}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <a className="btn btn--ghost" href={`#/informe/${type}`}>Ver mi informe</a>
+    </section>
   );
 }

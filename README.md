@@ -1,22 +1,58 @@
 # skilly
 
-**Porque en Skilly te adaptamos al mercado.** Skilly prepara a jóvenes para su primer empleo con una ruta
-gamificada de habilidades: perfilación corta, lecciones de pocos minutos, XP y
-niveles con Kiki el camaleón, y certificados al aprobar cada módulo.
+**Porque en Skilly te adaptamos al mercado.** Skilly prepara a jóvenes para su primer empleo en dos pasos:
+primero la **Brújula**, un diagnóstico de 12 habilidades blandas, y después la
+**app**, una ruta gamificada ordenada según ese diagnóstico, con lecciones de
+pocos minutos, XP y niveles con Kiki el camaleón, y certificados al aprobar
+cada módulo.
 
 **Pruébala:** https://santiagorv104-dev.github.io/skilly/
 
 Cada cambio que se sube a `main` se publica solo en ese link (workflow
-`.github/workflows/publicar.yml`, tarda uno o dos minutos).
+`.github/workflows/publicar.yml`, corre las pruebas y tarda uno o dos minutos).
 
-## Qué incluye esta versión
+## Paso 1: la Brújula
+
+La Brújula es la misma app de
+[santiagorv104-dev/Brujula](https://github.com/santiagorv104-dev/Brujula),
+copiada sin cambios en `src/brujula/`: versión exprés (5 min) y completa
+(20 min), informe con radar, alertas, plan y tarjeta para compartir. Ese
+repositorio sigue funcionando por separado.
+
+- Rutas: `#/` (inicio), `#/expres`, `#/completa` e `#/informe/<versión>`.
+- `src/brujula/brand/` y `src/brujula/router.js` solo reexportan los de Skilly,
+  así los archivos de la Brújula quedan idénticos al original.
+- Al final del inicio y del informe aparece la tarjeta **Paso 2 · La app de
+  Skilly**, que lleva a crear la cuenta o a tu ruta.
+
+## Paso 2: la app
+
+La app vive en `#/app` y el resto de sus rutas. Lee el último resultado de la
+Brújula del mismo navegador (`src/puente/brujula.js`):
+
+- El registro trae el nombre que pusiste en la Brújula.
+- La ruta empieza por el módulo con menor puntaje en la Brújula:
+
+  | Módulo | Habilidades de la Brújula (promedio) |
+  |---|---|
+  | Liderazgo | Liderazgo, Iniciativa, Autoconciencia |
+  | Comunicación efectiva | Comunicación, Escucha y empatía |
+  | Trabajo en equipo | Trabajo en equipo, Negociación |
+  | Resiliencia | Resiliencia, Adaptabilidad, Aprendizaje |
+  | Resolución de problemas | Pensamiento crítico, Organización |
+
+- El inicio muestra tus fortalezas y prioridades de la Brújula y el puntaje de
+  cada módulo. Sin Brújula, la ruta empieza por la habilidad que elijas en la
+  perfilación.
+
+## Qué incluye la app
 
 - **Splash** (~2,5 s): Kiki se dibuja de la cabeza a la cola, la espiral se
   enrolla, el ojo parpadea y aparece "skilly" letra por letra con el lema. Se ve
   una vez por sesión y es estático si el sistema tiene "reducir movimiento".
 - **Landing**, **registro e inicio de sesión**.
-- **Perfilación**: 5 preguntas que definen tu ruta (empieza por la habilidad que elijas).
-- **Inicio**: Kiki, nivel y barra de XP, ruta de módulos y logros.
+- **Perfilación**: 5 preguntas sobre tu situación y objetivos.
+- **Inicio**: Kiki, nivel y barra de XP, tu Brújula, ruta de módulos y logros.
 - **Cinco módulos**: Liderazgo, Comunicación efectiva, Trabajo en equipo,
   Resiliencia y Resolución de problemas. Cada uno con un video de Kiki,
   4 lecciones y un reto final (70 % para aprobar).
@@ -36,6 +72,7 @@ npm install
 npm run dev      # servidor de desarrollo
 npm run build    # versión de producción en dist/
 npm run preview  # sirve dist/ para probarla
+npm test         # pruebas del puntaje de la Brújula
 ```
 
 ## Estructura
@@ -48,6 +85,9 @@ src/components/    barra de navegación, barra de XP y diálogo de subida de niv
 src/content/       textos de la perfilación y de los cinco módulos (lecciones, retos, guiones)
 videos/            generador de los videos (clips de Pexels + voz Piper + ffmpeg)
 src/state.jsx      cuenta, XP, niveles y progreso
+src/brujula/       la Brújula, copiada sin cambios del repositorio Brujula
+src/puente/        une las dos partes: rutas de la Brújula, tarjeta "Paso 2" y lectura de resultados
+tests/             pruebas del puntaje de la Brújula
 ```
 
 ## Videos de los módulos
